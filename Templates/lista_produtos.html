@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <title>Agenda</title>
+</head>
+<body class="container">
+    <h1 style = "text-align: center;margin-top: 5%;"	>Cadastro de Subestações</h1>
+    <table border = 1 class="table table-striped table-hover ">
+        <thead>
+          <tbody>
+              <tr>
+                  <th>#</th>
+                  <th>Subestacao</th>
+                  <th>Nivel de Tensao</th>
+                  <th>Descricao</th>
+                  <th>Ações</th>
+                  {% for ses in Subestacoes  %}
+                    <tr>
+                        <td>{{ ses.id }}</td>
+                        <td>{{ ses.subestacao }}</td>
+                        <td>{{ ses.nivel_de_tensao }}</td>
+                        <td>{{ ses.descricao}}</td>
+                        <td>
+                            <a href="#" class="btn btn-success btn-sm">
+                            <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <a href="#" class="btn btn-danger btn-sm">
+                            <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                  {% endfor %}  
+                  
+            </tr>
+          </tbody>  
+        </thead>
+
+
+    </table>
+    <a href="{% url 'index' %}" class="btn btn-dark">Início</a> 
+    <a href="{% url 'arearestrita' %}" class="btn btn-dark">Área Restrita</a>  
+     
+    <a href="{% url 'cadastrar_subestacao' %}" class="btn btn-dark">Cadastras nova SE</a>  
+    
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

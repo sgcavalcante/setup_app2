@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Item</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    
+    
+    
+</head>
+    <body class="container bg-secondary" style="text-align: center;margin-top: 10%;">
+    <h1>Cadastro de Item</h1>    
+    <form method="POST" action="{% url 'cadastrar_subestacao' %}" >
+        {% csrf_token %}
+
+        <div>
+            <label for=""> Nome da Subestação</label>
+            <input type="text" name = "subestacao" style="margin-bottom: 15px;">
+            
+        </div>
+        
+        
+        
+        <div>
+            <label for="" style="margin-bottom: 15px;"> Escolha Nível de Tensão</label>
+            <input type="text" name = "nivel_de_tensao" style="margin-bottom: 15px;">
+            <!--    
+            select name="nivelTensao" id=""nivelTensao>
+                <option value = "380">380</option>
+                <option value="13,8">13,8</option>
+                <option value = "69">69</option>
+                <option value = "138">138</option>
+                <option value = "230">230</option>
+            </select>
+            -->
+        
+        </div>
+
+        <div class = "componentes"><!--Espaco para Sinopse do filme-->
+            <label for="sinopse" class="form-label">Escopo da Obra</label>
+            <textarea class="form-control form-control-lg" name="descricao" id="descricao" 
+                cols="" rows="5">
+            </textarea>
+       
+       
+        <div class = "mb-3" > 
+            <button type="submit" class ="btn btn-primary btn-lg  " style="margin-top: 55px;">Cadastrar</button>
+            <button type="reset" class = "btn btn-danger btn-lg" style="margin-top: 55px;">Limpar Formulario</button>
+        </div>    
+        <div class="bg-secondary text-center " style ="margin-top: 1%; font-size: 100px;">
+
+            <a href="{% url 'arearestrita' %}" class=" btn btn-lg btn-primary"style="text-decoration:none">Bem Vindo!</a>
+             
+            <a href="{% url 'home' %}"  class= " btn btn-lg btn-warning" style="text-decoration:none">Banco</a>
+        </div>
+    </div>
+
+
+
+
+    </form>
+
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
