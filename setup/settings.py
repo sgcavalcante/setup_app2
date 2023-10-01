@@ -29,7 +29,7 @@ SECRET_KEY = str(os.getenv('CHAVE_SECRETA'))
 DEBUG = True # aletardo para compatibilizar com RailWay, antes era -> True
 
 #ALLOWED_HOSTS = ['192.168.0.197']
-ALLOWED_HOSTS = ['setupapp2-production.up.railway.app/','127.0.0.1']
+ALLOWED_HOSTS = ['setupapp2-production.up.railway.app','127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = ['https://setupapp2-production.up.railway.app']
 
